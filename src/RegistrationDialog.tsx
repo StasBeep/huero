@@ -7,15 +7,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Container } from '@mui/material';
 
-import GoogleIcon from '@mui/icons-material/Google';
-import AppleIcon from '@mui/icons-material/Apple';
-import MicrosoftIcon from '@mui/icons-material/Microsoft';
-// Иконку надо где-то найти
-import SlackIcon from '@mui/icons-material/Google';
+import AppleLogin from 'react-apple-login'
+import { GoogleLoginButton, MicrosoftLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
 
 import './RegistrationDialog.scss'
-
-import ButtonRegister from './ButtonRegister';
+import { WidthFull } from '@mui/icons-material';
 
 const RegistrationDialog = () => {
     const [open, setOpen] = React.useState(false);
@@ -37,6 +33,7 @@ const RegistrationDialog = () => {
                 <DialogTitle className='register-title'>Huelo</DialogTitle>
                 <DialogContent>
                     <TextField
+                        className='register-login'
                         autoFocus
                         margin="dense"
                         id="name"
@@ -45,12 +42,22 @@ const RegistrationDialog = () => {
                         fullWidth
                         variant="standard"
                     />
+                    <TextField
+                        className='register-login'
+                        autoFocus
+                        margin="dense"
+                        id="password"
+                        label="Password"
+                        type="password"
+                        fullWidth
+                        variant="standard"
+                    />
                     <Button className='register-btn-resume' fullWidth variant="contained">Продолжить</Button>
                     <span className='register-choice'>или</span>
-                    <ButtonRegister description='Войти с помощью Google' icon={GoogleIcon} />
-                    <ButtonRegister description='Войти с помощью Майкрософт' icon={AppleIcon} />
-                    <ButtonRegister description='Войти с помощью Apple' icon={MicrosoftIcon} />
-                    <ButtonRegister description='Войти с помощью Slack' icon={SlackIcon} />
+                    <AppleLogin clientId="com.react.apple.login" redirectURI="https://redirectUrl.com" />
+                    <MicrosoftLoginButton onClick={() => alert("Hello")} />
+                    <GoogleLoginButton onClick={() => alert("Hello")} />
+                    <FacebookLoginButton onClick={() => alert("Hello")} />
                 </DialogContent>
                 <Container className='register-wrp'>
                     <Button variant="text">Не удаётся войти в систему?</Button>
