@@ -1,0 +1,38 @@
+.wrapper {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.register {
+    &-title {
+        padding: 20px !important;
+        margin: 0 auto !important;
+    }
+
+    &-login {
+        margin-bottom: 10px !important;
+    }
+
+    &-btn {
+        margin-bottom: 15px !important;
+        
+        &-resume {
+            margin-top: 5px !important;
+        }
+    }
+
+    &-choice {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        line-height: 1.6;
+        letter-spacing: 0.0075em;
+    }
+
+    &-wrp {
+        width: auto !important;
+        margin: 0 auto !important;
+    }
+}
