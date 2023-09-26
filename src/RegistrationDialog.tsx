@@ -8,6 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Container } from '@mui/material';
 
 import AppleLogin from 'react-apple-login';
+import AppleSignin  from 'react-apple-signin-auth';
 import { GoogleLoginButton, MicrosoftLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
 
 import './RegistrationDialog.scss';
@@ -57,6 +58,7 @@ const RegistrationDialog = () => {
                     <GoogleLoginButton onClick={() => alert("Google")} />
                     <FacebookLoginButton onClick={() => alert("Facebook")} />
                     <AppleLogin designProp={{height: 45, width: 375}} clientId="com.react.apple.login" redirectURI="https://redirectUrl.com" />
+                    <AppleSignin clientId="com.react.apple.login" redirectURI="https://redirectUrl.com" />
                 </DialogContent>
                 <Container className='register-wrp'>
                     <Button variant="text">Не удаётся войти в систему?</Button>
