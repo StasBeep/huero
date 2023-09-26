@@ -7,10 +7,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Container } from '@mui/material';
 
-import AppleLogin from 'react-apple-login'
+import AppleLogin from 'react-apple-login';
 import { GoogleLoginButton, MicrosoftLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
 
-import './RegistrationDialog.scss'
+import './RegistrationDialog.scss';
 
 const RegistrationDialog = () => {
     const [open, setOpen] = React.useState(false);
@@ -53,10 +53,10 @@ const RegistrationDialog = () => {
                     />
                     <Button className='register-btn-resume' fullWidth variant="contained">Продолжить</Button>
                     <span className='register-choice'>или</span>
-                    <AppleLogin designProp={width: 100} clientId="com.react.apple.login" redirectURI="https://redirectUrl.com" />
                     <MicrosoftLoginButton onClick={() => alert("Microsoft")} />
                     <GoogleLoginButton onClick={() => alert("Google")} />
                     <FacebookLoginButton onClick={() => alert("Facebook")} />
+                    <AppleLogin designProp={{height: 45, width: 375}} clientId="com.react.apple.login" redirectURI="https://redirectUrl.com" />
                 </DialogContent>
                 <Container className='register-wrp'>
                     <Button variant="text">Не удаётся войти в систему?</Button>
